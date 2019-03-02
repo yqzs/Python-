@@ -13,3 +13,7 @@ for tag in soup.find_all(re.compile('b')):
 print(soup.find_all(id = re.compile('link')))
 '''
 print(soup.find_all(string = re.compile('Python')))  #查找字符串
+r = requests.get('http://zuihaodaxue.cn/zuihaodaxuepaiming2018.html')
+r.encoding = r.apparent_encoding
+soup = BeautifulSoup(r.text,'html.parser')
+print(soup.prettify())
